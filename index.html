@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.css" />
+    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./css/chart/chart.css">
+    <title>ACME</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" data-bs-toggle="offcanvas" href="#offcanvas">
+                            <div class="menu_icon">
+                                <img src="./imgs/menu.png" alt="menu">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex" href="#">
+                            <div class="search_icon">
+                                <img src="./imgs/search-interface-symbol.png" alt="menu">
+                            </div><span class="search_txt ps-2">Search transactions, invoices, or help</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li class="m-auto">
+
+                        <a class="nav-link">
+                            <div class="bell_icon position-relative">
+                                <img src="./imgs/bell.png" alt="bell">
+                                <span class="position-absolute start-50 translate-start p-1 bg-success rounded-circle" style="top: 5px;">
+                                    
+                                    <span class="visually-hidden">New alerts</span>
+                                  </span>
+                            </div>
+                        </a>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">
+                                    <div class="row d-flex align-items-center justify-content-center">
+                                        <div class="col-md-2"><div class="notific_img"><img src="./imgs/prof_pics/profile-pic-02.jpg" class="rounded-circle" alt=""></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="notific_text">
+                                                <h6>Bavid Kames</h6>
+                                                <span class="text-muted">Assigned you on the call with sarah</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center justify-content-end">
+                                            <span class="text-muted time_notific">2 mins ago</span>
+                                        </div>
+                                    </div>
+                                </a></li>
+                            <li><a class="dropdown-item" href="#"><div class="row d-flex align-items-center justify-content-center">
+                                <div class="col-md-2"><div class="notific_img"><img src="./imgs/prof_pics/profile-pic-03.jpg" class="rounded-circle" alt=""></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="notific_text">
+                                        <h6>Alexa Marie</h6>
+                                        <span class="text-muted">Assigned you on the call with sarah</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 d-flex align-items-center justify-content-end">
+                                    <span class="text-muted time_notific">3 mins ago</span>
+                                </div>
+                            </div></a></li>
+                           
+                            <li><a class="dropdown-item" href="#"><div class="d-flex">
+                                <div class="col-md-2"><div class="notific_img"><img src="./imgs/prof_pics/profile-pic-04.jpg" class="rounded-circle" alt=""></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="notific_text">
+                                        <h6>Eva Kames</h6>
+                                        <span class="text-muted">Added a new comment on sales task</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 d-flex align-items-center justify-content-end">
+                                    <span class="text-muted time_notific">5 mins ago</span>
+                                </div>
+                            </div></a></li>
+                        </ul>
+                    </li>
+                    <li class="m-auto dropdown">
+                        <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <div class="profile">
+                                <img src="./imgs/prof_pics/profile-pic-01.jpg" alt="pic1">
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                            <li><a class="text-muted dropdown-item" href="#"><span class="icon1 me-2"><img
+                                            src="./imgs/userProf.png" alt="home"> </span>My Profile</a></li>
+                            <li><a class="text-muted dropdown-item" href="#"><span class="icon1 me-2"><img
+                                            src="./imgs/invoice.png" alt="home"> </span>Billing</a></li>
+                            <li><a class="text-muted dropdown-item" href="#"><span class="icon1 me-2"><img
+                                            src="./imgs/logout.png" alt="home"> </span>Logout</a></li>
+                        </ul>
+
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar -->
+
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start text-white sidebar_nav" tabindex="-1" id="offcanvas"
+        aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">ACME</h5>
+            <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+        </div>
+        <div class="offcanvas-body offcanvas-bg">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white active" aria-current="page" href="#"><span
+                            class="sidebar_icon d-inline mb-3 me-2"><img src="./imgs/house.png" alt="home">
+                        </span>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#"><span class="sidebar_icon d-inline mb-3 me-2"><img
+                                src="./imgs/signal.png" alt="home"> </span>Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white d-flex align-items-center justify-content-center" href="#"><span
+                            class="sidebar_icon d-inline me-3"><img src="./imgs/down-arrow.png" alt="home">
+                        </span>Inbox<span class="badge bg-danger ms-auto">new</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#"><span class="sidebar_icon d-inline mb-3 me-2"><img
+                                src="./imgs/menu.png" alt="home"> </span>Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#"><span class="sidebar_icon d-inline mb-3 me-2"><img
+                                src="./imgs/settings.png" alt="home"> </span>Admin</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- offcanvas -->
+
+    <!-- overview -->
+    <section class="ms-4">
+        <div class="container">
+            <div class="row">
+                <h3>Overview</h3>
+            </div>
+
+            <div class="row d-flex justify-content-around">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6 rounded-2 bg-white">
+                            <div class="chart_left">
+                                <div class="txt d-flex justify-content-between">
+                                    <p>Statistics</p>
+                                    <p>Last 6months</p>
+                                </div>
+                                <div class="linechart mt-4">
+                                    <canvas id="mylineChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5 bg-white rounded-2">
+                            Sales Distribution
+                            <div class="chart-right p-4">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row bg-white rounded-2 mt-4">
+                        <div class="col-md-12 table-responsive">
+                            <h3>Referrer</h3>
+                            <table class="table">
+                                <thead class="table_bg">
+                                    <tr>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Views</th>
+                                        <th scope="col">Sales</th>
+                                        <th scope="col">Conversion</th>
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>google.com</td>
+                                        <td>3746</td>
+                                        <td>752</td>
+                                        <td>43%</td>
+                                        <td>$19,291</td>
+                                    </tr>
+                                    <tr>
+                                        <td>facebook.com</td>
+                                        <td>8126</td>
+                                        <td>728</td>
+                                        <td>32%</td>
+                                        <td>$17,638</td>
+                                    </tr>
+                                    <tr>
+                                        <td>twitter.com</td>
+                                        <td>8836</td>
+                                        <td>694</td>
+                                        <td>28%</td>
+                                        <td>$16,218</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Direct, email, IM</td>
+                                        <td>1173</td>
+                                        <td>645</td>
+                                        <td>24%</td>
+                                        <td>$14,421</td>
+                                    </tr>
+                                    <tr>
+                                        <td>linkedin.com</td>
+                                        <td>2739</td>
+                                        <td>539</td>
+                                        <td>20%</td>
+                                        <td>$12,370</td>
+                                    </tr>
+                                    <tr>
+                                        <td>instagram.com</td>
+                                        <td>2739</td>
+                                        <td>539</td>
+                                        <td>20%</td>
+                                        <td>$12,370</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row text-center bg-white">
+
+                        <div class="pic_prof_details pt-2">
+                            <div class="col-md-3 prof_img_info m-auto">
+                                <img class="rounded-circle" src="./imgs/prof_pics/profile-pic-01.jpg" alt="">
+                            </div>
+                            <div class="prof_info_text">
+                                <p>Nick Herasimenaka</p>
+                                <p class="text-muted">United States</p>
+                                <div class="social-media d-flex align-items-center justify-content-center">
+                                    <div class="twitter me-2"><i class="fa-brands fa-twitter text-muted"></i></div>
+                                    <div class="facebook me-2"><i class="fa-brands fa-facebook text-muted"></i></div>
+                                    <div class="linkedin me-2"><i class="fa-brands fa-linkedin-in text-muted"></i></div>
+                                    <div class="whatsapp me-2"><i class="fa-brands fa-whatsapp text-muted"></i></div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h6>Our Users</h6>
+                                <div class="dots">
+                                    <img src="./imgs/three-dots.png" alt="dots">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <table style="font-size: 0.8rem;">
+
+                                    <tr>
+                                        <td>
+                                            <div class="users_img">
+                                                <img src="./imgs/prof_pics/profile-pic-02.jpg" class="rounded-circle"
+                                                    alt="img">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p>Maria Anders<br> <span class="text-muted">United States</span></p>
+                                        </td>
+                                        <td colspan="2" class="text-muted">Mobile 9817273732</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="users_img"><img src="./imgs/prof_pics/profile-pic-03.jpg"
+                                                    class="rounded-circle" alt="img"></div>
+                                        </td>
+                                        <td>
+                                            <p>Francisco Chang<br> <span class="text-muted">United States</span></p>
+                                        </td>
+                                        <td colspan="2" class="text-muted">Mobile 8773676789</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="users_img"><img src="./imgs/prof_pics/profile-pic-04.jpg"
+                                                    class="rounded-circle" alt="img"></div>
+                                        </td>
+                                        <td>
+                                            <p>Francisco Chang<br> <span class="text-muted">United States</span></p>
+                                        </td>
+                                        <td colspan="2" class="text-muted">Mobile 8773676789</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row bg-white mt-4">
+                        <h6>Product video</h6>
+                        <div class="video_sec pt-2">
+                            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/Oy6hk6Y7VHQ"
+                                title="Empower your workforce with Hexnode MDM" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- overview -->
+
+
+    <script src="./js/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  position: absolute;
+  left: 250px;
+  width: calc(100% - 250px);
+  background-color: #F0F0F7;
+}
+
+.bell_icon, .menu_icon {
+  width: 20px;
+}
+
+.search_icon {
+  width: 15px;
+}
+
+.search_txt {
+  font-size: 0.8rem;
+  margin-block: auto;
+}
+
+.profile {
+  width: 30px;
+}
+.profile img {
+  border-radius: 15px 15px;
+}
+
+.sidebar_nav {
+  width: 250px;
+  transform: none;
+  visibility: visible !important;
+  position: fixed;
+  right: 0;
+  height: 100%;
+  background-color: #3C3B54;
+}
+
+.offcanvas-bg {
+  background-color: #43425D;
+}
+.offcanvas-bg ul li {
+  padding-bottom: 20px;
+}
+
+.icon1 img {
+  width: 14px;
+}
+
+.notific_text {
+  font-size: 0.8rem;
+}
+.notific_text h6 {
+  font-size: 1rem;
+}
+
+.time_notific {
+  font-size: 0.8rem;
+}
+
+.sidebar_icon {
+  position: relative;
+}
+
+.sidebar_icon img {
+  width: 15px;
+  filter: invert(1);
+}
+
+.table_bg {
+  background-color: #F0F0F7;
+}
+
+.dots {
+  width: 30px;
+}
+
+.users_img img {
+  width: 40px;
+}/*# sourceMappingURL=custom.css.map */
